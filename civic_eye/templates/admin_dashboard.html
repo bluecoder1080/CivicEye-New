@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Dashboard - CivicEye{% endblock %}
+
+{% block content %}
+<div class="home-section">
+    <h1>Admin Dashboard</h1>
+    <p>Manage civic issues for the entire college community</p>
+</div>
+
+<div class="section">
+    <h2>Filters</h2>
+    <form method="GET" action="/admin/dashboard" class="filters">
+        <div>
+            <label>Category</label>
+            <select name="category" class="filter-input">
+                <option value="">All Categories</option>
+                <option value="Pothole" {% if selected_category == 'Pothole' %}selected{% endif %}>Pothole</option>
+                <option value="Garbage" {% if selected_category == 'Garbage' %}selected{% endif %}>Garbage</option>
+                <option value="Streetlight" {% if selected_category == 'Streetlight' %}selected{% endif %}>Streetlight</option>
+                <option value="Water Leakage" {% if selected_category == 'Water Leakage' %}selected{% endif %}>Water Leakage</option>
+                <option value="Drainage" {% if selected_category == 'Drainage' %}selected{% endif %}>Drainage</option>
+                <option value="Other" {% if selected_category == 'Other' %}selected{% endif %}>Other</option>
+            </select>
+        </div>
+        <div>
+            <label>Priority</label>
+            <select name="priority" class="filter-input">
+                <option value="">All Priorities</option>
+                <option value="Low" {% if selected_priority == 'Low' %}selected{% endif %}>Low</option>
+                <option value="Medium" {% if selected_priority == 'Medium' %}selected{% endif %}>Medium</option>
+                <option value="High" {% if selected_priority == 'High' %}selected{% endif %}>High</option>
+            </select>
+        </div>
+        <div>
+            <label>Status</label>
+            <select name="status" class="filter-input">
+                <option value="">All Statuses</option>
+                <option value="Pending" {% if selected_status == 'Pending' %}selected{% endif %}>Pending</option>
+                <option value="In Progress" {% if selected_status == 'In Progress' %}selected{% endif %}>In Progress</option>
+                <option value="Resolved" {% if selected_status == 'Resolved' %}selected{% endif %}>Resolved</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Apply Filters</button>
+    </form>
+</div>
+
+<div class="section">
+    <h2>All Issues ({% if status_counts %}{{ sum(status_counts.values()) }} issues{% endif %})</h2>
+    
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Issue</th>
+                    <th>Category</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>User</th>
+                    <th>Created</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for issue in issues %}
+                <tr>
+                    <td>{{ issue.id }}</td>
+                    <td>
+                        <strong>{{ issue.title|truncate(40) }}</strong><br>
+                        <small>{{ issue.description|truncate(60) if issue.description else '' }}</small>
+                    </td>
+                    <td>{{ issue.category|default('N/A') }}</td>
+                    <td>{{ issue.priority|default('N/A') }}</td>
+                    <td>
+                        <span class="status-badge-small {{ issue.status|lower }}">{{ issue.status|capitalize }}</span>
+                    </td>
+                    <td>{{ issue.email|default('N/A') }}</td>
+                    <td>{{ issue.created_at|default('N/A') }}</td>
+                    <td>
+                        {% if not user.is_admin or issue.user_id == 1 %}
+                            <form method="POST" action="/admin/issue/{{ issue.id }}/status" style="display:inline">
+                                <select name="status" class="status-select">
+                                    <option value="Pending" {% if issue.status == 'Pending' %}selected{% endif %}>Pending</option>
+                                    <option value="In Progress" {% if issue.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+                                    <option value="Resolved" {% if issue.status == 'Resolved' %}selected{% endif %}>Resolved</option>
+                                </select>
+                                <button type="submit" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Update</button>
+                            </form>
+                        {% endif %}
+                        {% if user.is_admin %}
+                            <form method="POST" action="/admin/issue/{{ issue.id }}/correct-category" style="display:inline">
+                                <select name="new_category" class="category-select">
+                                    <option value="Pothole" {% if issue.category == 'Pothole' %}selected{% endif %}>Pothole</option>
+                                    <option value="Garbage" {% if issue.category == 'Garbage' %}selected{% endif %}>Garbage</option>
+                                    <option value="Streetlight" {% if issue.category == 'Streetlight' %}selected{% endif %}>Streetlight</option>
+                                    <option value="Water Leakage" {% if issue.category == 'Water Leakage' %}selected{% endif %}>Water Leakage</option>
+                                    <option value="Drainage" {% if issue.category == 'Drainage' %}selected{% endif %}>Drainage</option>
+                                    <option value="Other" {% if issue.category == 'Other' %}selected{% endif %}>Other</option>
+                                    <option value="Needs review" {% if issue.category == 'Needs review' %}selected{% endif %}>Needs review</option>
+                                </select>
+                                <button type="submit" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Fix</button>
+                            </form>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Counts Overview</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+        <div style="background: var(--card); padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; font-weight: bold; color: var(--primary);">{{ status_counts.get('Pending', 0) }}</div>
+            <div style="color: var(--muted);">Pending</div>
+        </div>
+        <div style="background: var(--card); padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; font-weight: bold; color: var(--info);">{{ status_counts.get('In Progress', 0) }}</div>
+            <div style="color: var(--muted);">In Progress</div>
+        </div>
+        <div style="background: var(--card); padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; font-weight: bold; color: var(--success);">{{ status_counts.get('Resolved', 0) }}</div>
+            <div style="color: var(--muted);">Resolved</div>
+        </div>
+        <div style="background: var(--card); padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; font-weight: bold; color: var(--warning);">{{ category_counts.get('Pothole', 0) }}</div>
+            <div style="color: var(--muted);">Pothole</div>
+        </div>
+        <div style="background: var(--card); padding: 1rem; border-radius: 8px; text-align: center;">
+            <div style="font-size: 2rem; font-weight: bold; color: var(--primary);">{{ category_counts.get('Garbage', 0) }}</div>
+            <div style="color: var(--muted);">Garbage</div>
+        </div>
+    </div>
+</div>
+
+{% if metrics %}
+<div class="section">
+    <h2>ML Metrics</h2>
+    <div class="ml-card">
+        <h4>Category Model</h4>
+        <p>Accuracy: {{ metrics.get('category_accuracy', 0)|round(4) * 100|round(0) }}%</p>
+        <p>F1 Score: {{ metrics.get('category_classification_report', {}).get('macro avg', {}).get('f1-score', 0)|round(4) * 100|round(0) }}%</p>
+    </div>
+    <div class="ml-card">
+        <h4>Priority Model</h4>
+        <p>Accuracy: {{ metrics.get('priority_accuracy', 0)|round(4) * 100|round(0) }}%</p>
+        <p>F1 Score: {{ metrics.get('priority_classification_report', {}).get('macro avg', {}).get('f1-score', 0)|round(4) * 100|round(0) }}%</p>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
