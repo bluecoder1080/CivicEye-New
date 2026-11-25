@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+sqlite3
+pandas
+scikit-learn
+joblib
+passlib
+python-jose[cryptography]
+email-validator
+jinja2
+markdown
