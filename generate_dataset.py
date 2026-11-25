@@ -4,7 +4,7 @@ import csv
 categories = ["Pothole", "Garbage", "Streetlight", "Water Leakage", "Drainage", "Other"]
 priorities = ["Low", "Medium", "High"]
 
-# Complaint texts grouped by category (varied, realistic, including Hinglish, 50 per category)
+# 50 realistic complaints per category, varied wording, some Hinglish
 complaints_by_category = {
     "Pothole": [
         "Sir main road par ek bada gola hai, gaadiyan gir rahi hain",
@@ -24,13 +24,29 @@ complaints_by_category = {
         "Is tarah ki complaint pehle bhi, same wala topic",
         "Main road se pooja society tak jalan bana hai, 2 saal se",
         "Gadiyan girne ka risk, kabhi bhi ho sakti",
-        "Barish main to condition aur bhi buri, paanii jama",
+        "Barish main to condition aur buri, paanii jama",
         "Sabse bada gol, sector 12 main, koi nahi nirakshak",
         "Pothole se gaadi ka damage, personal experience",
         "Municipal corporation ko shikayat, sunte nahi",
         "Gali number 3 main 5 baar ghorha, baar baar",
         "School wale bachon ko dikkat, padhte waqt",
-        "Pani jama hone par mosquito bane, beemari"
+        "Pani jama hone par mosquito bane, beemari",
+        "Road main ghorha, 2 saal se nahi bharwa",
+        "Gol bahut bada, gari nikalte waqt darr lagta",
+        "Pothole repairing ka kaam shuru hi nahi",
+        "Sarkar waala track, kab milega possible?",
+        "Shikayat number par call karo, sunte nahi",
+        "Gully main 3 baar girna, adjustment karna pdta",
+        "Pothole se students pareshan, exam time",
+        "Heavy vehicle se damage, baat poochni",
+        "Road condition kharab, election baat bani",
+        "Pothole bharwane ka kaam lamba process",
+        "Mera road ticketing, pothole wala issue",
+        "Gol main puddle, barish main face nahi kar sakte",
+        "Road surface kharab, 4-wheeler damage",
+        "Pothole wali baat, MLA ko shikayat",
+        "Road main girne ka risk, baarish main",
+        "Ghara ke samne wala road, tange mein pain"
     ],
     "Garbage": [
         "Basti main kachra 3 din se uda nahi, gadbad ho rahi",
@@ -52,7 +68,20 @@ complaints_by_category = {
         "Kachra udne wale log, kahaan se la kar jaate",
         "3 din se uda nahi, smell se beetar ho raha",
         "Park wale area main, bachon khelne ka injury",
-        "Kachra gale mein, beemari ka reason ban sakta"
+        "Kachra gale mein, beemari ka reason ban sakta",
+        "Festival baad main kachra, 1 week lagta saaf hona",
+        "Paying guest main kachra, landlord baat nahi sakte",
+        "Office main kachra, kaam karte waqt pareshan",
+        "Society main kachra collection, Sunday ko baat",
+        "Ghar main kachra management, daily routine",
+        "Market wale plastic bag, gaaiyaan pareshan",
+        "Bio-degradable waste, set up karna chahiye",
+        "Kachra burning wala, pollution bana rakha",
+        "Domestic waste collection, time pe nahi aata",
+        "Flat wale area main, kachra nahi ud pa raha",
+        "Street vendor waste, rasta rok raha",
+        "Household kachra, 2 baar collection hui",
+        "Area wale safai karamchari, 1 mahine se nahi aaye"
     ],
     "Streetlight": [
         "Street light gully no 2 mein fail ho gaya, raat main andhera",
@@ -75,7 +104,18 @@ complaints_by_category = {
         "Electricity bill badh raha, light kam jal rahi",
         "Gully main akeli andar ja sakti, dark mein",
         "Light repaired hone mein 2 mahine lag gaye",
-        "Streetlight shuru hone se, ghaltiyan kam hui"
+        "Streetlight shuru hone se, ghaltiyan kam hui",
+        "Gully main dark raha, raat ko galti hoti",
+        "Pole light gir pdi, adjustment karna padega",
+        "Electric wire niche gir pdi, baat poochni",
+        "Light main fuse, baar baar ghaltiyan",
+        "Streetlight main remote, kabhi kabhi fail",
+        "Gully main akeli baat, dark mein dar lagta",
+        "High mast maintenance, 6 mahine se pending",
+        "Light beam kharab, raat main farak nahi padega",
+        "Street light off hone par, ghaltiyan beet jati",
+        "Electricity cutoff wala notice, kab milega?",
+        "Streetlight repair wala, dobara shuru nahi hua"
     ],
     "Water Leakage": [
         "Ghar main paani gir raha, waste water, billing badh gayi",
@@ -96,7 +136,23 @@ complaints_by_category = {
         "Pipe fitti main leak, baarish mein badh jaye",
         "Upper floor main leak, niche wale ko dikkat",
         "Socity main water tank overflow, beetar baat",
-        "Pipe wala kharab, sirf temporary fix"
+        "Pipe wala kharab, sirf temporary fix",
+        "Basement main water, beetar baat ban gayi",
+        "Ceiling main stain, water leakage wala scar",
+        "Wall main damp, painting gir rahi",
+        "Bathroom main water, every samay baat",
+        "Kitchen sink leak, daily usage problem",
+        "Water meter kharab, reading galat aati",
+        "Society main tank, cleaning baaki rehti",
+        "Pipe connection change, 3 baar ho chuka",
+        "Water pressure kam, ghaltiyan hoti",
+        "Leakage point nahi dikh raha, dhundne wala",
+        "Pipe fitti main crack, water jama",
+        "Socity main pipe burst, 2 ghante tak",
+        "Upper floor main leak, niche wale pareshan",
+        "Water bill double hui, reason poochna",
+        "Leakage repair wala, 2 mahine se",
+        "Pipe wala kharab, two baar fix hua"
     ],
     "Drainage": [
         "Drainage nala overflow ho raha, gadbad, baarish main face nahi",
@@ -117,7 +173,21 @@ complaints_by_category = {
         "Nala choka hone par, 2 gadiyan gir gayi",
         "Water nikalne wala machine kharab",
         "Drain saaf karna, 1 saal se nahi hua",
-        "Gully main paani jama, beetar baat ban gayi"
+        "Gully main paani jama, beetar baat ban gayi",
+        "Drain block wala, chemical dhundne wala",
+        "Drain cover girna, adjustment karna padega",
+        "Gully main water, beetar baat shuru",
+        "Sewage smell, health risk baat poochni",
+        "Drain line blocked, 2 baar clear karwa",
+        "Rain water main, raat main face nahi kar sakte",
+        "Drain maintenance wala, baar baar baat",
+        "Gully main stagnant water, beemari wala khatra",
+        "Drain cover missing, baat poochni",
+        "Drain blockage wala, chemical treatment",
+        "Rain water main, road par jama rehta",
+        "Drain overflow wala, gali main mud",
+        "Gully main water jama, beetar baat",
+        "Sewage treatment plant, kaam karna chahiye"
     ],
     "Other": [
         "Electric wire gir pdi main road par, accident risk",
@@ -138,7 +208,27 @@ complaints_by_category = {
         "Water connection dene ka anmolan, lamba process",
         "Society main park main, boring kharab",
         "Street main painting ka kaam, 6 mahine se",
-        "Koi badda sawal, officer se poochna"
+        "Koi badda sawal, officer se poochna",
+        "WiFi password badalna, tech support chahiye",
+        "Light main switch, kharab ho raha",
+        "Society main park, swing gir pdi hui",
+        "Street main digging, 3 mahine se chal raha",
+        "Koi parv, setting shuru, jagah nahi mili",
+        "Park main grass, gardener nahi aaya",
+        "Public toilet, cleaning baaki reh gayi",
+        "Street light main, remote control kharab",
+        "Society main gate, auto close nahi ho raha",
+        "Park main bench, टूटी हुयी हालत",
+        "Public facility, maintenance ka kaam",
+        "Electric pole main, wire gir pdi hui",
+        "Koi sawal, related tech support",
+        "WiFi range badhwana, signal kam hai",
+        "Light main board, display kharab hua",
+        "Society main park, plants suit nahi",
+        "Street main banner, ugal pda hua",
+        "Public property, damage ka case pending",
+        "Electric fitting, spark wali baat poochni",
+        "Koi pareshani, batana zaruri"
     ]
 }
 
