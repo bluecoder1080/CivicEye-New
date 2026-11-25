@@ -5,6 +5,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
 import joblib
+import json
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -102,8 +103,8 @@ metrics = {
     'priority_accuracy': float(pri_accuracy),
     'category_classification_report': classification_report(y_test_cat, y_pred_cat, output_dict=True, zero_division=0),
     'priority_classification_report': classification_report(y_test_pri, y_pred_pri, output_dict=True, zero_division=0),
-    'category_names': sorted(df['category'].unique()).tolist(),
-    'priority_names': sorted(df['priority'].unique()).tolist(),
+    'category_names': sorted(df['category'].unique()),
+    'priority_names': sorted(df['priority'].unique()),
 }
 
 with open('models/metrics.json', 'w') as f:

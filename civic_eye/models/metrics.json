@@ -1,0 +1,102 @@
+{
+  "dataset_size": 300,
+  "category_accuracy": 0.16666666666666666,
+  "priority_accuracy": 0.3333333333333333,
+  "category_classification_report": {
+    "Drainage": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 10.0
+    },
+    "Garbage": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 10.0
+    },
+    "Other": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 10.0
+    },
+    "Pothole": {
+      "precision": 0.16666666666666666,
+      "recall": 1.0,
+      "f1-score": 0.2857142857142857,
+      "support": 10.0
+    },
+    "Streetlight": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 10.0
+    },
+    "Water Leakage": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 10.0
+    },
+    "accuracy": 0.16666666666666666,
+    "macro avg": {
+      "precision": 0.027777777777777776,
+      "recall": 0.16666666666666666,
+      "f1-score": 0.047619047619047616,
+      "support": 60.0
+    },
+    "weighted avg": {
+      "precision": 0.027777777777777776,
+      "recall": 0.16666666666666666,
+      "f1-score": 0.04761904761904761,
+      "support": 60.0
+    }
+  },
+  "priority_classification_report": {
+    "High": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 20.0
+    },
+    "Low": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1-score": 0.5,
+      "support": 20.0
+    },
+    "Medium": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 20.0
+    },
+    "accuracy": 0.3333333333333333,
+    "macro avg": {
+      "precision": 0.1111111111111111,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.16666666666666666,
+      "support": 60.0
+    },
+    "weighted avg": {
+      "precision": 0.1111111111111111,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.16666666666666666,
+      "support": 60.0
+    }
+  },
+  "category_names": [
+    "Drainage",
+    "Garbage",
+    "Other",
+    "Pothole",
+    "Streetlight",
+    "Water Leakage"
+  ],
+  "priority_names": [
+    "High",
+    "Low",
+    "Medium"
+  ]
+}
