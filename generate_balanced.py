@@ -6,7 +6,6 @@ import os
 categories = ["Pothole", "Garbage", "Streetlight", "Water Leakage", "Drainage", "Other"]
 priorities = ["Low", "Medium", "High"]
 
-# 50 realistic complaints per category with varied wording
 complaints = {
     "Pothole": [
         "Sir main road par ek bada gola hai, gaadiyan gir rahi hain",
@@ -232,7 +231,7 @@ pri_cycle = iter(priorities * 100)  # cycle through Low x100, Medium x100, High 
 for cat in categories:
     selected = random.sample(complaints[cat], 50)
     for text in selected:
-        pri = next(pri_cycle)  # get next priority in cycle
+        pri = next(pri_cycle)
         data.append([text, cat, pri])
 
 # Shuffle the data
@@ -248,16 +247,16 @@ with open(output_path, 'w', newline='', encoding='utf-8') as f:
 
 print(f"Created dataset with {len(data)} rows at {output_path}")
 
-print(f"\nCategory distribution:")
 cat_counts = {}
 for row in data:
     cat_counts[row[1]] = cat_counts.get(row[1], 0) + 1
+print(f"\nCategory distribution:")
 for cat, count in sorted(cat_counts.items()):
     print(f"  {cat}: {count}")
 
-print(f"\nPriority distribution:")
 pri_counts = {}
 for row in data:
     pri_counts[row[2]] = pri_counts.get(row[2], 0) + 1
+print(f"\nPriority distribution:")
 for pri, count in sorted(pri_counts.items()):
     print(f"  {pri}: {count}")
