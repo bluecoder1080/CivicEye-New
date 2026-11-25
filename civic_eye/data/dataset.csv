@@ -1,68 +1,301 @@
 text,category,priority
-"Sir main road par ek bada gola hai, gaadiyan gir rahi hain","Pothole","High"
-"Merry gully mein paani jama ho raha hai","Pothole","Medium"
-"Nai basti main road t cracked hai","Pothole","Low"
-"Police station ke peeche dhala gir pda hai","Pothole","High"
-"Main market main 2-3 feel ghorha hai","Pothole","Medium"
-"College ke gate ke saamne dhala utha hua hai","Pothole","Low"
-"Sector 15 main road main bohot saare golay hain","Pothole","High"
-"Mera ghar ke baahar road kharab hai","Pothole","Medium"
-"Tomar gali main ek bada dhala hai","Pothole","High"
-"Buses stand ke point par nali gir hui hai","Pothole","Medium"
-"Basti main kachra 3 din se uda nahi","Garbage","High"
-"Road par kachra fekne wale milte hain","Garbage","Medium"
-"Nala par kachra jama, gadbad ho rahi hai","Garbage","High"
-"Market complex main garbage bin fill ho gaya","Garbage","Medium"
-"School ke samne road par kachra","Garbage","Low"
-"Park main kachra faela hua hai","Garbage","Medium"
-"Office complex main garbage accumulation","Garbage","High"
-"Residential area main kachra nahi uda","Garbage","Medium"
-"Festival baad main street completely dirty","Garbage","High"
-"Paying guest main kachra nikalne ki problematic","Garbage","Low"
-"Street light gully no 2 mein fail ho gaya","Streetlight","High"
-"Main road par 3-4 light lambe samay se buoy","Streetlight","Medium"
-"College campus main streetlight off hai raat ko","Streetlight","High"
-"Park main light kharab, raat main dar lagta hai","Streetlight","Medium"
-"Society main streetlight jala nahi raha hai","Streetlight","High"
-"Signal crossing main light blinking","Streetlight","Medium"
-"Ghar main paani gir raha, waste water","Water Leakage","High"
-"Main pipe burst ho gayi, water multi road par","Water Leakage","High"
-"Billi ki nali se paani tut raha hai","Water Leakage","Medium"
-"Bathroom ka tap fail ho gaya, bohot paani waste","Water Leakage","Medium"
-"Garden main irrigation pipe burst","Water Leakage","Medium"
-"Terrace main water leakage se ceiling gir raha","Water Leakage","High"
-"Cooling system main water leak","Water Leakage","Medium"
-"Pipe connection loose, water flowing on road","Water Leakage","High"
-"Fridge se paani tut raha supply line main","Water Leakage","Low"
-"Water tank overflow ho raha, waste","Water Leakage","Medium"
-"Drainage nala overflow ho raha, gadbad","Drainage","High"
-"Rain main drainage fail, puddle ban gayi","Drainage","Medium"
-"Basti main drain choka hua, paani nahi nikal raha","Drainage","High"
-"School main drainage system kharab","Drainage","Medium"
-"Office building main drain overflowing","Drainage","High"
-"Monsoon main drainage main mud aaya","Drainage","Medium"
-"Street drain blocked, water jama","Drainage","High"
-"Gully main drain smell aa raha hai","Drainage","Medium"
-"Drain cover gir pda, accident risk","Drainage","High"
-"River near colony main drainage waste","Drainage","Medium"
-"Electric wire gir pdi main road par","Other","High"
-"Tree gir pdi, road block hai","Other","Medium"
-"Dog biting people main park main","Other","Medium"
-"Noise pollution shuru, construction work","Other","High"
-"Main road par traffic jam permanent","Other","Medium"
-"Koi accident scene clear nahi hua","Other","High"
-"WiFi signal kam ho gaya, tech issue","Other","Low"
-"Light main remote kaam nahi kar raha","Other","Medium"
-"Society main gate lock kharab","Other","Low"
-"Public toilet maintenance ka issue","Other","High"
-"Kachra uddna shuru karna chahiye","Garbage","Medium"
-"Street light thora bright rakhna","Streetlight","Low"
-"Ghar main water connection fix karna","Water Leakage","Medium"
-"Drain saaf karwane ka prayas","Drainage","Medium"
-"Beechari se public property save karna","Other","Medium"
-"Road main gola bharwane ka kaam","Pothole","Medium"
-"Light bulb kharab karna","Streetlight","Low"
-"Pipe leak rokna","Water Leakage","Medium"
-"Nala saaf karwana","Drainage","Medium"
-"Kachra collection system badhna","Garbage","Medium"
-"Other maintenance ka kaam","Other","Medium"
+Complaint text 1,Pothole,High
+Complaint text 2,Pothole,Low
+Complaint text 3,Pothole,High
+Complaint text 4,Pothole,Low
+Complaint text 5,Pothole,Low
+Complaint text 6,Pothole,High
+Complaint text 7,Pothole,High
+Complaint text 8,Pothole,Medium
+Complaint text 9,Pothole,Medium
+Complaint text 10,Pothole,High
+Complaint text 11,Pothole,Low
+Complaint text 12,Pothole,High
+Complaint text 13,Pothole,Medium
+Complaint text 14,Pothole,Low
+Complaint text 15,Pothole,Low
+Complaint text 16,Pothole,Medium
+Complaint text 17,Pothole,Low
+Complaint text 18,Pothole,Low
+Complaint text 19,Pothole,Medium
+Complaint text 20,Pothole,High
+Complaint text 21,Pothole,Medium
+Complaint text 22,Pothole,High
+Complaint text 23,Pothole,Medium
+Complaint text 24,Pothole,Medium
+Complaint text 25,Pothole,Medium
+Complaint text 26,Pothole,High
+Complaint text 27,Pothole,High
+Complaint text 28,Pothole,Medium
+Complaint text 29,Pothole,High
+Complaint text 30,Pothole,Medium
+Complaint text 31,Pothole,Medium
+Complaint text 32,Pothole,Low
+Complaint text 33,Pothole,Medium
+Complaint text 34,Pothole,High
+Complaint text 35,Pothole,Medium
+Complaint text 36,Pothole,Medium
+Complaint text 37,Pothole,High
+Complaint text 38,Pothole,Low
+Complaint text 39,Pothole,Medium
+Complaint text 40,Pothole,Low
+Complaint text 41,Pothole,High
+Complaint text 42,Pothole,Medium
+Complaint text 43,Pothole,Medium
+Complaint text 44,Pothole,Medium
+Complaint text 45,Pothole,High
+Complaint text 46,Pothole,High
+Complaint text 47,Pothole,Medium
+Complaint text 48,Pothole,Medium
+Complaint text 49,Pothole,High
+Complaint text 50,Pothole,Medium
+Complaint text 51,Garbage,High
+Complaint text 52,Garbage,Medium
+Complaint text 53,Garbage,High
+Complaint text 54,Garbage,High
+Complaint text 55,Garbage,Low
+Complaint text 56,Garbage,Low
+Complaint text 57,Garbage,High
+Complaint text 58,Garbage,Low
+Complaint text 59,Garbage,Low
+Complaint text 60,Garbage,High
+Complaint text 61,Garbage,Medium
+Complaint text 62,Garbage,Low
+Complaint text 63,Garbage,Low
+Complaint text 64,Garbage,Medium
+Complaint text 65,Garbage,High
+Complaint text 66,Garbage,Low
+Complaint text 67,Garbage,Low
+Complaint text 68,Garbage,Low
+Complaint text 69,Garbage,Medium
+Complaint text 70,Garbage,High
+Complaint text 71,Garbage,High
+Complaint text 72,Garbage,Medium
+Complaint text 73,Garbage,High
+Complaint text 74,Garbage,Medium
+Complaint text 75,Garbage,Medium
+Complaint text 76,Garbage,Medium
+Complaint text 77,Garbage,Medium
+Complaint text 78,Garbage,Low
+Complaint text 79,Garbage,Low
+Complaint text 80,Garbage,Medium
+Complaint text 81,Garbage,Low
+Complaint text 82,Garbage,High
+Complaint text 83,Garbage,High
+Complaint text 84,Garbage,Medium
+Complaint text 85,Garbage,High
+Complaint text 86,Garbage,Medium
+Complaint text 87,Garbage,Low
+Complaint text 88,Garbage,Low
+Complaint text 89,Garbage,Low
+Complaint text 90,Garbage,Low
+Complaint text 91,Garbage,Low
+Complaint text 92,Garbage,High
+Complaint text 93,Garbage,Medium
+Complaint text 94,Garbage,Medium
+Complaint text 95,Garbage,Low
+Complaint text 96,Garbage,High
+Complaint text 97,Garbage,Low
+Complaint text 98,Garbage,High
+Complaint text 99,Garbage,Low
+Complaint text 100,Garbage,Medium
+Complaint text 101,Streetlight,Low
+Complaint text 102,Streetlight,Low
+Complaint text 103,Streetlight,Medium
+Complaint text 104,Streetlight,Low
+Complaint text 105,Streetlight,High
+Complaint text 106,Streetlight,Low
+Complaint text 107,Streetlight,Low
+Complaint text 108,Streetlight,High
+Complaint text 109,Streetlight,High
+Complaint text 110,Streetlight,Low
+Complaint text 111,Streetlight,High
+Complaint text 112,Streetlight,Medium
+Complaint text 113,Streetlight,Low
+Complaint text 114,Streetlight,Low
+Complaint text 115,Streetlight,Low
+Complaint text 116,Streetlight,Low
+Complaint text 117,Streetlight,High
+Complaint text 118,Streetlight,High
+Complaint text 119,Streetlight,Low
+Complaint text 120,Streetlight,Medium
+Complaint text 121,Streetlight,High
+Complaint text 122,Streetlight,Low
+Complaint text 123,Streetlight,Medium
+Complaint text 124,Streetlight,Medium
+Complaint text 125,Streetlight,Medium
+Complaint text 126,Streetlight,Medium
+Complaint text 127,Streetlight,Low
+Complaint text 128,Streetlight,Medium
+Complaint text 129,Streetlight,High
+Complaint text 130,Streetlight,High
+Complaint text 131,Streetlight,Low
+Complaint text 132,Streetlight,Medium
+Complaint text 133,Streetlight,High
+Complaint text 134,Streetlight,High
+Complaint text 135,Streetlight,High
+Complaint text 136,Streetlight,Medium
+Complaint text 137,Streetlight,Medium
+Complaint text 138,Streetlight,Medium
+Complaint text 139,Streetlight,High
+Complaint text 140,Streetlight,High
+Complaint text 141,Streetlight,High
+Complaint text 142,Streetlight,Low
+Complaint text 143,Streetlight,High
+Complaint text 144,Streetlight,Low
+Complaint text 145,Streetlight,Low
+Complaint text 146,Streetlight,High
+Complaint text 147,Streetlight,Medium
+Complaint text 148,Streetlight,Low
+Complaint text 149,Streetlight,Medium
+Complaint text 150,Streetlight,Medium
+Complaint text 151,Water Leakage,Low
+Complaint text 152,Water Leakage,Medium
+Complaint text 153,Water Leakage,Low
+Complaint text 154,Water Leakage,Medium
+Complaint text 155,Water Leakage,High
+Complaint text 156,Water Leakage,Medium
+Complaint text 157,Water Leakage,Medium
+Complaint text 158,Water Leakage,Medium
+Complaint text 159,Water Leakage,Medium
+Complaint text 160,Water Leakage,Low
+Complaint text 161,Water Leakage,Low
+Complaint text 162,Water Leakage,High
+Complaint text 163,Water Leakage,Low
+Complaint text 164,Water Leakage,Medium
+Complaint text 165,Water Leakage,Medium
+Complaint text 166,Water Leakage,Low
+Complaint text 167,Water Leakage,High
+Complaint text 168,Water Leakage,Medium
+Complaint text 169,Water Leakage,Medium
+Complaint text 170,Water Leakage,Low
+Complaint text 171,Water Leakage,Low
+Complaint text 172,Water Leakage,Low
+Complaint text 173,Water Leakage,Low
+Complaint text 174,Water Leakage,Medium
+Complaint text 175,Water Leakage,High
+Complaint text 176,Water Leakage,Low
+Complaint text 177,Water Leakage,High
+Complaint text 178,Water Leakage,Low
+Complaint text 179,Water Leakage,High
+Complaint text 180,Water Leakage,Medium
+Complaint text 181,Water Leakage,High
+Complaint text 182,Water Leakage,High
+Complaint text 183,Water Leakage,Medium
+Complaint text 184,Water Leakage,Medium
+Complaint text 185,Water Leakage,Medium
+Complaint text 186,Water Leakage,Medium
+Complaint text 187,Water Leakage,High
+Complaint text 188,Water Leakage,High
+Complaint text 189,Water Leakage,Low
+Complaint text 190,Water Leakage,High
+Complaint text 191,Water Leakage,Medium
+Complaint text 192,Water Leakage,High
+Complaint text 193,Water Leakage,Medium
+Complaint text 194,Water Leakage,High
+Complaint text 195,Water Leakage,High
+Complaint text 196,Water Leakage,High
+Complaint text 197,Water Leakage,Low
+Complaint text 198,Water Leakage,High
+Complaint text 199,Water Leakage,Low
+Complaint text 200,Water Leakage,Low
+Complaint text 201,Drainage,High
+Complaint text 202,Drainage,High
+Complaint text 203,Drainage,High
+Complaint text 204,Drainage,Low
+Complaint text 205,Drainage,High
+Complaint text 206,Drainage,High
+Complaint text 207,Drainage,Medium
+Complaint text 208,Drainage,High
+Complaint text 209,Drainage,Low
+Complaint text 210,Drainage,Medium
+Complaint text 211,Drainage,Low
+Complaint text 212,Drainage,High
+Complaint text 213,Drainage,High
+Complaint text 214,Drainage,Medium
+Complaint text 215,Drainage,High
+Complaint text 216,Drainage,High
+Complaint text 217,Drainage,Low
+Complaint text 218,Drainage,High
+Complaint text 219,Drainage,High
+Complaint text 220,Drainage,Low
+Complaint text 221,Drainage,Low
+Complaint text 222,Drainage,Medium
+Complaint text 223,Drainage,High
+Complaint text 224,Drainage,Low
+Complaint text 225,Drainage,Low
+Complaint text 226,Drainage,Medium
+Complaint text 227,Drainage,Low
+Complaint text 228,Drainage,High
+Complaint text 229,Drainage,High
+Complaint text 230,Drainage,Low
+Complaint text 231,Drainage,Medium
+Complaint text 232,Drainage,Medium
+Complaint text 233,Drainage,Low
+Complaint text 234,Drainage,High
+Complaint text 235,Drainage,Medium
+Complaint text 236,Drainage,High
+Complaint text 237,Drainage,Medium
+Complaint text 238,Drainage,High
+Complaint text 239,Drainage,High
+Complaint text 240,Drainage,High
+Complaint text 241,Drainage,Low
+Complaint text 242,Drainage,Low
+Complaint text 243,Drainage,Medium
+Complaint text 244,Drainage,Medium
+Complaint text 245,Drainage,Low
+Complaint text 246,Drainage,Medium
+Complaint text 247,Drainage,Low
+Complaint text 248,Drainage,High
+Complaint text 249,Drainage,Low
+Complaint text 250,Drainage,Low
+Complaint text 251,Other,Low
+Complaint text 252,Other,High
+Complaint text 253,Other,Medium
+Complaint text 254,Other,Low
+Complaint text 255,Other,Medium
+Complaint text 256,Other,Low
+Complaint text 257,Other,Low
+Complaint text 258,Other,Low
+Complaint text 259,Other,Low
+Complaint text 260,Other,Low
+Complaint text 261,Other,Low
+Complaint text 262,Other,Low
+Complaint text 263,Other,Medium
+Complaint text 264,Other,Medium
+Complaint text 265,Other,High
+Complaint text 266,Other,Low
+Complaint text 267,Other,Low
+Complaint text 268,Other,Medium
+Complaint text 269,Other,High
+Complaint text 270,Other,High
+Complaint text 271,Other,High
+Complaint text 272,Other,High
+Complaint text 273,Other,Medium
+Complaint text 274,Other,Low
+Complaint text 275,Other,Low
+Complaint text 276,Other,Low
+Complaint text 277,Other,High
+Complaint text 278,Other,Medium
+Complaint text 279,Other,Low
+Complaint text 280,Other,High
+Complaint text 281,Other,Low
+Complaint text 282,Other,Medium
+Complaint text 283,Other,High
+Complaint text 284,Other,Medium
+Complaint text 285,Other,Medium
+Complaint text 286,Other,Medium
+Complaint text 287,Other,High
+Complaint text 288,Other,Low
+Complaint text 289,Other,High
+Complaint text 290,Other,High
+Complaint text 291,Other,Medium
+Complaint text 292,Other,Medium
+Complaint text 293,Other,Medium
+Complaint text 294,Other,High
+Complaint text 295,Other,High
+Complaint text 296,Other,Low
+Complaint text 297,Other,Medium
+Complaint text 298,Other,Medium
+Complaint text 299,Other,Medium
+Complaint text 300,Other,Medium

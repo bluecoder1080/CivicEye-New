@@ -14,11 +14,6 @@ import os
 # Load dataset
 df = pd.read_csv('data/dataset.csv')
 print(f"Dataset size: {len(df)} rows")
-print(f"Columns: {df.columns.tolist()}")
-print(f"\nCategory distribution:")
-print(df['category'].value_counts())
-print(f"\nPriority distribution:")
-print(df['priority'].value_counts())
 
 # Train category model
 X = df['text']
@@ -29,7 +24,7 @@ X_train, X_test, y_train_cat, y_test_cat = train_test_split(
 
 cat_pipeline = Pipeline([
     ('tfidf', TfidfVectorizer(stop_words='english', ngram_range=(1, 2))),
-    ('clf', LogisticRegression(max_iter=1000, multi_class='auto', random_state=42)),
+    ('clf', LogisticRegression(max_iter=1000, random_state=42)),
 ])
 
 cat_pipeline.fit(X_train, y_train_cat)
@@ -39,7 +34,7 @@ cat_accuracy = accuracy_score(y_test_cat, y_pred_cat)
 cat_report = classification_report(y_test_cat, y_pred_cat, output_dict=True, zero_division=0)
 cat_cm = confusion_matrix(y_test_cat, y_pred_cat, labels=sorted(df['category'].unique()))
 
-print(f"\nCategory Model Accuracy: {cat_accuracy:.4f}")
+print(f"Category Model Accuracy: {cat_accuracy:.4f}")
 print(f"Classification Report:\n{classification_report(y_test_cat, y_pred_cat)}")
 
 # Train priority model
@@ -50,24 +45,24 @@ X_train2, X_test2, y_train_pri, y_test_pri = train_test_split(
 
 pri_pipeline = Pipeline([
     ('tfidf', TfidfVectorizer(stop_words='english', ngram_range=(1, 2))),
-    ('clf', LogisticRegression(max_iter=1000, multi_class='auto', random_state=42)),
+    ('clf', LogisticRegression(max_iter=1000, random_state=42)),
 ])
 
 pri_pipeline.fit(X_train2, y_train_pri)
 y_pred_pri = pri_pipeline.predict(X_test2)
 
 pri_accuracy = accuracy_score(y_test_pri, y_pred_pri)
-pri_report = classification_report(y_test_pri, y_pred_pri, output_dict=True, zero_divisions=0)
+pri_report = classification_report(y_test_pri, y_pred_pri, output_dict=True, zero_division=0)
 pri_cm = confusion_matrix(y_test_pri, y_pred_pri, labels=sorted(df['priority'].unique()))
 
-print(f"\nPriority Model Accuracy: {pri_accuracy:.4f}")
+print(f"Priority Model Accuracy: {pri_accuracy:.4f}")
 print(f"Classification Report:\n{classification_report(y_test_pri, y_pred_pri)}")
 
 # Save models
 os.makedirs('models', exist_ok=True)
 joblib.dump(cat_pipeline, 'models/category_model.pkl')
 joblib.dump(pri_pipeline, 'models/priority_model.pkl')
-print("\nModels saved to models/ directory")
+print("Models saved to models/ directory")
 
 # Save confusion matrices as images
 plt.figure(figsize=(8, 4))
@@ -106,7 +101,7 @@ metrics = {
     'category_accuracy': float(cat_accuracy),
     'priority_accuracy': float(pri_accuracy),
     'category_classification_report': classification_report(y_test_cat, y_pred_cat, output_dict=True, zero_division=0),
-    'priority_classification_report': classification_report(y_test_pri, y_pred_pri, output_dict=True, zero_divisions=0),
+    'priority_classification_report': classification_report(y_test_pri, y_pred_pri, output_dict=True, zero_division=0),
     'category_names': sorted(df['category'].unique()).tolist(),
     'priority_names': sorted(df['priority'].unique()).tolist(),
 }
