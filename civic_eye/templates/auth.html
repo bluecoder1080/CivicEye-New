@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}{% "Login / Register" %}{% endblock %}
+
+{% block content %}
+<div class="auth-section">
+    <h2>{{ page|capitalize }}</h2>
+    
+    <form id="authForm" class="form-group">
+        {% if page == "login" %}
+            <input type="hidden" name="action" value="login">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="Enter your email">
+            <label>Password</label>
+            <input type="password" name="password" required placeholder="Enter your password">
+        {% else %}
+            <input type="hidden" name="action" value="register">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="Enter your email">
+            <label>Password</label>
+            <input type="password" name="password" required minlength="6" placeholder="Enter your password">
+        {% endif %}
+    </form>
+    
+    <div class="auth-actions">
+        <button type="submit" form="authForm" class="btn">{{ page|capitalize }}</button>
+    </div>
+    
+    <p style="text-align: center; margin-top 1.5rem; color: var(--muted); font-size: 0.9rem;">
+        Don't have an account? <a href="#" id="switchToRegister">Register</a> | 
+        Already have an account? <a href="#" id="switchToLogin">Login</a>
+    </p>
+</div>
+
+<script>
+    // Toggle between login and register
+    const switchToRegister = () => {
+        document.getElementById('authForm').action = '/api/register';
+        document.querySelector('#authForm label:first-child').innerText = 'Email';
+        document.querySelector('#authForm label:nth-child(3)').innerText = 'Password';
+        document.getElementById('switchToRegister').style.display = 'none';
+        document.getElementById('switchToLogin').style.display = 'inline';
+    };
+    
+    const switchToLogin = () => {
+        document.getElementById('authForm').action = '/api/login';
+        document.querySelector('#authForm label:first-child').innerText = 'Email';
+        document.querySelector('#authForm label:nth-child(3)').innerText = 'Password';
+        document.getElementById('switchToRegister').style.display = 'inline';
+        document.getElementById('switchToLogin').style.display = 'none';
+    };
+    
+    // Initialize based on current page
+    {% if page == "register" %}switchToRegister();{% else %}switchToLogin();{% endif %}
+</script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}CivicEye - Civic Issue Reporting{% endblock %}
+
+{% block content %}
+<div class="home-section">
+    <h1>Crowdsourced Civic Issue Reporting</h1>
+    <p>Report and resolve civic issues in your college community</p>
+    
+    <div style="max-width: 500px; margin: 3rem auto; text-align: left;">
+        {% if not user.is_admin %}
+            <h3>Welcome, User!</h3>
+            <p>Register or login to report issues and track their resolution.</p>
+            <button class="btn" onclick="window.location='/user/register'">Register</button>
+            <button class="btn btn-secondary" onclick="window.location='/api/login'" style="margin-left: 0.5rem;">Login</button>
+        {% else %}
+            <h3>Welcome, Admin!</h3>
+            <p>Manage the civic issue reporting system for the college community.</p>
+            <button class="btn" onclick="window.location='/admin/dashboard'">Go to Dashboard</button>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
